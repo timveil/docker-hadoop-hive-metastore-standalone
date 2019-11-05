@@ -34,4 +34,7 @@ RUN chmod a+x /run.sh
 
 RUN tar -xvf /tmp/*-bin.tar.gz -C /opt/hive-metastore --strip-components=1
 
+ADD conf/metastore-log4j2.properties /opt/hive-metastore/conf
+ADD conf/metastore-site.xml /opt/hive-metastore/conf
+
 CMD ["/run.sh"]
