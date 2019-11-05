@@ -1,3 +1,3 @@
 #!/bin/bash
 
-tail -f /dev/null
+/opt/hive-metastore/conf/bin/start-metastore
