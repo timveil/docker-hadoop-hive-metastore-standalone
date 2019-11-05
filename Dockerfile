@@ -31,4 +31,4 @@ COPY --from=metastore-builder /tmp/hive/standalone-metastore/target/*-bin.tar.gz
 
 RUN tar -xvf /tmp/*-bin.tar.gz -C /opt/hive-metastore --strip-components=1
 
-CMD tail -f /dev/null
+CMD ["/run.sh"]
