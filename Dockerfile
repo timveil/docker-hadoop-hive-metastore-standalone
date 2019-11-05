@@ -29,6 +29,9 @@ RUN apt-get update && apt-get install -y apt-utils && mkdir /opt/hive-metastore
 
 COPY --from=metastore-builder /tmp/hive/standalone-metastore/target/*-bin.tar.gz /tmp/
 
+ADD run.sh /run.sh
+RUN chmod a+x /run.sh
+
 RUN tar -xvf /tmp/*-bin.tar.gz -C /opt/hive-metastore --strip-components=1
 
 CMD ["/run.sh"]
