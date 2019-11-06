@@ -24,7 +24,7 @@ LABEL maintainer="tjveil@gmail.com"
 
 ENV METASTORE_HOME=/opt/hive-metastore
 
-RUN apt-get update && apt-get install -y apt-utils && mkdir /opt/hive-metastore
+RUN mkdir /opt/hive-metastore
 
 COPY --from=metastore-builder /tmp/hive/standalone-metastore/target/*-bin.tar.gz /tmp/
 
@@ -40,7 +40,5 @@ RUN curl -fSL https://jdbc.postgresql.org/download/postgresql-$POSTGRESQL_JDBC_V
 
 ADD conf/metastore-log4j2.properties /opt/hive-metastore/conf
 ADD conf/metastore-site.xml /opt/hive-metastore/conf
-
-# adding run.sh
 
 CMD ["/run.sh"]
