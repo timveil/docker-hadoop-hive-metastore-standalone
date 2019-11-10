@@ -1,5 +1,7 @@
 #!/bin/bash
 
-# /opt/hive-metastore/bin/start-metastore
+cd /opt/hive-metastore/bin/
 
-tail -f /dev/null
+./start-metastore
+
+## tail -f /dev/null
