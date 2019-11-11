@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y apt-utils git
 RUN git clone https://github.com/timveil/hive.git --branch release-3.1.2 --single-branch --depth 1 /tmp/hive
 
 RUN cd /tmp/hive \
-    && mvn -pl standalone-metastore -am clean package -DskipTests
+    && mvn -pl standalone-metastore -am clean package -DskipTests -Dmaven.javadoc.skip=true
 
 # Stage 2 - run hive metastore-standalone
 
